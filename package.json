@@ -1,0 +1,29 @@
+{
+  "name": "graphql-playground",
+  "version": "1.0.0",
+  "description": "This repository is a starting point for working with GraphQL. It focuses on core GraphQL concepts through simple, hands-on examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashique6465/graphql-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ashique6465/graphql-playground/issues"
+  },
+  "homepage": "https://github.com/ashique6465/graphql-playground#readme",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
