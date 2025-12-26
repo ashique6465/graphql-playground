@@ -6,13 +6,14 @@ const typeDefs = gql `
    id: ID!
    name: String!
    email: String!
+   age: Int!
    }
   type Query {
   users: [User!]!
   }
 
   type Mutation { 
-  createUser(name: String!, email: String!): User!
+  createUser(name: String!, email: String!, age: Int!): User!
   }
    `
    ;
@@ -23,8 +24,8 @@ const resolvers = {
         users: () => users,
     },
     Mutation: {
-        createUser: (_, { name,email}) => {
-            const user = {id: users.length + 1 , name,email};
+        createUser: (_, { name,email,age}) => {
+            const user = {id: users.length + 1 , name,email,age};
             users.push(user)
             return user;
         }
