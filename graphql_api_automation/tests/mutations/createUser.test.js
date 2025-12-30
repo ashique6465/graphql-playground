@@ -11,7 +11,7 @@ describe("Create User Mutation", () =>{
             }
         }
             `;
-            const res = await graphqlRequest(mutation);
+            const res = await graphqlRequest(mutation,{},"valid-token");
             expect(res.statusCode).toBe(200);
             expect(res.body.data.createUser.name).toBe("ash")
     })

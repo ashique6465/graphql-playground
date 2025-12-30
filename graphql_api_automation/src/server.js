@@ -12,6 +12,12 @@ async function startServer() {
     });
     const {url} = await startStandaloneServer(server,{
     listen: { port:4000},
+    context: async ({ req }) => {
+        const authHeader = req.headers.authorization || "";
+        const isAuthenticated = authHeader === "Bearer valid-token";
+        return { isAuthenticated};
+    }
+
 }) 
 
 console.log(`GraphQL running at ${url}`)
