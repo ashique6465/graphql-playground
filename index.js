@@ -19,8 +19,15 @@ email: String!
 age: Int!
 }
 
+input UpdateUserInput{
+name: String
+age: Int
+}
+
 type Mutation {
 createUser(input: CreateUserInput!): User!
+updateUser(id: ID!, input: UpdateUserInput!): User!
+deleteUser(id: ID!): User!
 }
 
 `
@@ -41,6 +48,29 @@ const resolvers = {
       };
       users.push(newUser);
       return newUser;
+
+    },
+    updateUser: (_, {id, input}) =>{
+      const user = users.find(u => u.id == id);
+      if(!user){
+        throw new Error("User not found");
+      }
+      if(input.name !== undefined){
+        user.name = input.name;
+      }
+      if(input.age !== undefined){
+        user.age = input.age;
+      }
+      return user;
+    },
+    deleteUser: (_,{id}) => {
+      const index = users.findIndex(u => u.id == id);
+      if (index === -1){
+        throw new Error("User not found");
+      }
+      const deletedUser = users[index];
+      users.splice(index,1);
+      return deletedUser
 
     }
   }
