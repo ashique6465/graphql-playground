@@ -1,6 +1,12 @@
 const graphqlRequest = require("../helpers/graphqlClient");
 
+const {resetUsers} = require("../../src/data/users");
+
+
 describe("Create User Mutation", () =>{
+    beforeEach(() => {
+    resetUsers();
+})
     test("should create a new user", async () =>{
         const mutation = `
          mutation {

@@ -1,11 +1,12 @@
 const graphqlRequest = require("../helpers/graphqlClient");
 const {resetUsers} = require("../../src/data/users");
 
+
+describe("Get Users (Authorized)", ()=>{
+    
 beforeEach(() => {
     resetUsers();
 })
-
-describe("Get Users (Authorized)", ()=>{
     test("should return users when token is valid", async () =>{
         const query = `
         query{
