@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "test:api": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 playwright test"
+
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
+    "@playwright/test": "^1.57.0",
     "jest": "^30.2.0",
     "supertest": "^7.1.4"
   }
