@@ -1,5 +1,6 @@
 const { users } = require("../data/users");
 
+
 const resolvers = {
   Query: {
     users: (_, __, context) => {

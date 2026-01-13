@@ -4,7 +4,9 @@ const typeDefs = `
         name: String!
         email: String!
         age: Int
-    }
+    
+}
+   
 
     type Query{
         users: [User!]
