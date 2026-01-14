@@ -25,6 +25,7 @@
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "playwright": "^1.57.0"
   }
 }
